@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block title %}Omen | {{genre.name}}{% endblock title %}
+{% block page_title %}{{genre.name}}{% endblock page_title %}
+
+{% block content %}
+    <section>
+        <div class="container">
+            <div class="row">
+                <!-- movie card-->
+                {% for movie in movies %}
+                <div class="col-xl-6 col-md-12">
+                    <div class="card">
+                        <div class="row film-div">
+                            <img class="card-img-top" src="{{movie.poster_image.url}}" alt="placeholder">
+                            <div class="card-body">
+                                <div class="card-content">
+                                    <h5 class="card-title"><a href={% url 'movie_page' movie.slug %}>{{movie.title}}</a></h5>
+                                    <div class="genres">
+                                        {% for genre in movie.genres.all %}
+                                        <a href="{% url 'genre_page' genre.slug %}">
+                                            <div class="card-text movie-genre">{{genre.name}}</div>
+                                        </a>
+                                        {% endfor %}
+                                    </div>
+                                    <div class="my-1">
+                                        <strong class="card-text">Režija:</strong>
+                                        {% for director in movie.directors.all %}
+                                        <p class="card-text d-inline">
+                                            {{director}}{% if not forloop.last %},{% endif %}
+                                        </p>
+                                        {% endfor %}
+                                    </div>
+
+                                    <div class="my-1">
+                                        <strong class="card-text">Glavne uloge:</strong>
+                                        {% for actor in movie.actors.all %}
+                                        <p class="card-text d-inline">
+                                            {{actor}}{% if not forloop.last %},{% endif %}
+                                        </p>
+                                        {% endfor %}
+                                    </div>
+                                </div>
+                                <div class="divButton">
+                                    <a href="{% url 'reservation_page' %}">
+                                        <button class="button">
+                                                <span class="button_lg" >
+                                                    <span class="button_sl"></span>
+                                                    <span class="button_text">Rezerviši</span>
+                                                </span>
+                                        </button>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <!-- movie card END-->
+            </div>
+        </div>
+    </section>
+{% endblock content %}

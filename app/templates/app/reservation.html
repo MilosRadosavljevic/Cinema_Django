@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Omen | Rezervacije{% endblock title %}
+{% block page_title %}Rezervacije{% endblock page_title %}
+
+{% block content %}
+    <section class="reservation-form">
+        <div class="message">{{message}}</div>
+        <div>
+            {% for p in projection %}
+                <p class="text-light w-25">{{p.movie}}</p>
+            {% endfor %}
+        </div>
+        <form method="POST">
+            {% csrf_token %}
+            {{reservation_form}}
+            <button class="button" type="submit">
+                <span class="button_lg">
+                    <span class="button_sl"></span>
+                    <span class="button_text">Rezerviši</span>
+                </span>
+            </button>
+        </form>
+    </section>
+{% endblock content %}

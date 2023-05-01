@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block title %}Omen | Kontakt{% endblock title %}
+{% block page_title %}Kontakt{% endblock page_title %}Kontakt
+
+{% block content %}
+    <section>
+        <div class="container">
+            <div class="section-title">Kontakt</div>
+            <div class="cinema-description">
+                <ul style="list-style-type: disc;">
+                    <li>Adresa: ul. Trg Kralja Petra 4, 11000 Beograd, Srbija</li>
+                    <li>Broj telefona: +381 11 1234 567</li>
+                    <li>Radno vreme: od ponedeljka do petka od 10h do 23h, subotom i nedeljom od 12h do 23h</li>
+                    <li>E-mail: <a href="mailto:info@omencinema.rs" target="_new">info@omencinema.rs</a></li>
+                    <li>Fax: +381 11 7654 321</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="send-email-form">
+        <div class="container">
+            <h3 class="section-title">Posaljite nam poruku</h3>
+            <form action="" method="post">
+                {% csrf_token %}
+                {{question_form}}
+                <button class="button">
+                    <span class="button_lg">
+                        <span class="button_sl"></span>
+                        <span class="button_text">Pošalji</span>
+                    </span>
+                </button>
+            </form>
+        </div>
+    </section>    
+{% endblock content %}

@@ -1,0 +1,818 @@
+@import url("https://fonts.googleapis.com/css2?family=Phudu&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+/*
+font-family: 'Phudu', cursive;
+font-family: 'Poppins', sans-serif;
+*/
+
+.row {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-toggler {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.navbar-toggler {
+  margin: 15px;
+}
+
+.navbar-collapse {
+  order: 2;
+  flex-grow: 0;
+}
+header {
+  position: fixed;
+  z-index: 9999;
+  width: 100%;
+}
+
+header .navbar-expand-xl {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin: 10px;
+}
+
+header .navbar-toggler-icon {
+  z-index: 50;
+  border-radius: 2px;
+  background-color: transparent;
+  border: 2px solid #e0e1dd;
+}
+
+a header {
+  background-color: #0d1b2a;
+}
+
+.navbar {
+  background-color: #0d1b2a;
+  justify-content: center;
+  /* text-align: center; */
+}
+
+.navbar-brand {
+  margin: 0px;
+  padding: 0px 20px;
+}
+
+.navbar img {
+  width: 30px;
+  height: 100%;
+}
+
+#navbarNav {
+  justify-content: center;
+}
+
+.navbar .nav-item {
+  text-decoration: none;
+  text-align: center;
+  padding: 0px 15px !important;
+}
+
+.navbar .nav-item a {
+  letter-spacing: 0.5px;
+  margin: 0px;
+  padding: 0px;
+  color: #e0e1dd;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  font-size: 20px;
+  position: relative;
+  text-decoration: none;
+}
+
+.navbar .nav-item a:active {
+  color: white;
+}
+
+.nav-link::before,
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #ff4655;
+  transition: width 0.5s;
+}
+
+.nav-link::before {
+  right: 0;
+  top: 100%;
+}
+
+.nav-link::after {
+  left: 0;
+  bottom: 100%;
+}
+
+.nav-link:hover::before {
+  width: 100%;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+body {
+  background-color: #1b263b;
+}
+
+.omen-center-part {
+  position: fixed;
+}
+
+.container {
+  width: 100%;
+  padding: 0px;
+  margin: 0px auto;
+}
+
+.karosel {
+  position: relative;
+}
+.page-title {
+  font-family: "Phudu", cursive;
+  letter-spacing: 15px;
+  color: #e0e1dd;
+  padding-top: 130px !important;
+  padding: 100px;
+  text-align: center;
+  font-size: 70px;
+  text-transform: uppercase;
+}
+
+.movie-page h2 {
+  color: #e0e1dd;
+  font-size: 20px;
+}
+
+.movie-page img {
+  width: -webkit-fill-available;
+}
+
+footer {
+  background-color: #0d1b2a;
+  color: #e0e1dd;
+}
+
+footer .div-footer {
+  padding: 50px 200px 50px 200px;
+}
+
+footer .q-links li {
+  text-align: left;
+  list-style-type: none;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+footer {
+  font-family: "Phudu", cursive;
+}
+
+footer .q-links {
+  margin: 0px;
+  padding: 0px;
+}
+
+footer .q-links li a {
+  font-family: "Poppins", sans-serif;
+  font-weight: lighter;
+  text-decoration: none;
+  color: #e0e1dd;
+  font-size: 25px;
+  text-align: left;
+}
+
+.card {
+  /* border-radius: 71% 60% 69% 80% / 61% 44% 96% 139%; */
+  background: linear-gradient(145deg, #0c1826, #0e1d2d);
+  /* background: linear-gradient(145deg, #3a6da8, #c5d1de); */
+  box-shadow: 6px 6px 12px #0a1622, -6px -6px 12px #102032;
+}
+
+.col-xl-6 .card {
+  margin: 10px;
+}
+
+.card .row {
+  flex-wrap: nowrap;
+}
+.divButton a {
+  text-decoration: none;
+}
+.divButton {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 10px;
+  padding: 10px;
+}
+
+.card-body {
+  margin: 0px;
+  padding: 0px;
+}
+
+.events .container {
+  justify-content: center;
+  display: flex;
+  padding: 0px;
+}
+
+.events .movies .card-body {
+  padding: 10px;
+}
+
+.events .movies .row {
+  justify-content: center;
+  padding: 0px;
+  margin: 0px;
+}
+
+.events .movies .card {
+  margin-bottom: 50px;
+  padding: 0px;
+  width: 700px;
+}
+
+.events .col-12 {
+  justify-content: center;
+  display: grid;
+  padding: 0px;
+  margin: 0px;
+}
+
+.film-div .card-content {
+  /* text-align: justify; */
+  /* margin: 10px; */
+  position: absolute;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  /* height: 100%; */
+}
+
+.card-text {
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 1px;
+  color: #e0e1dd;
+  font-size: 15px;
+}
+.card-title {
+  letter-spacing: 1px !important;
+  font-family: "Phudu", cursive;
+  font-weight: bold;
+  color: #e0e1dd;
+  font-size: 23px;
+}
+.genres {
+  color: white;
+  display: inline-flex;
+  margin-bottom: 5px;
+}
+.genres a {
+  text-decoration: none;
+}
+
+.desc-inline p {
+  display: inline;
+  margin: 0px 3px 0px 0px;
+}
+
+.movie-page p {
+  margin: 0px;
+}
+.genres a {
+  color: white;
+  text-decoration: none;
+}
+
+.genres .movie-genre {
+  display: inline-flex;
+  font-size: 11px;
+  text-decoration: none;
+  margin-right: 5px;
+  padding: 3px 5px;
+  background-color: #415a77;
+  border-radius: 5px;
+}
+
+.card .film-div img {
+  padding: 0px;
+  object-fit: cover;
+  width: 200px;
+  /* border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; */
+}
+
+section {
+  padding: 70px 0px;
+}
+
+.newsletter-text {
+  text-align: center;
+  justify-content: center;
+  display: block;
+}
+
+.newsletter-text .row {
+  text-align: center;
+  justify-content: center;
+  display: block;
+}
+
+.newsletter-form {
+  text-align: center;
+}
+
+.subscribe {
+  background-color: #121b2c;
+}
+
+.section-title {
+  font-family: "Phudu", cursive;
+  color: #e0e1dd;
+  font-size: 30px;
+}
+
+ul.errorlist {
+  display: none;
+}
+
+.subscribe .description,
+.cinema-description,
+.sub-msg {
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  color: #e0e1dd;
+}
+
+.cinema-description {
+  text-align: justify;
+}
+
+.movie-page p {
+  color: #e0e1dd;
+}
+.send-email-form input {
+  width: 50%;
+}
+
+.send-email-form textarea {
+  width: 100%;
+}
+
+.reservation-form .message {
+  background-color: #1b263b;
+  font-family: "Poppins", sans-serif;
+  color: #e0e1dd;
+  margin-bottom: 10px;
+  padding: 3px;
+  text-align: center;
+}
+
+.send-email-form input,
+.send-email-form textarea,
+.reservation-form input,
+.reservation-form select {
+  background-color: #1b263b;
+  font-family: "Poppins", sans-serif;
+  color: #e0e1dd;
+  border: 1px white solid;
+  margin-bottom: 10px;
+  padding: 7px;
+}
+
+.send-email-form input:focus,
+.send-email-form textarea:focus,
+.reservation-form input:focus,
+.reservation-form select:focus {
+  background-color: #1b263b;
+  font-family: "Poppins", sans-serif;
+  color: #e0e1dd;
+}
+.reservation-form form {
+  justify-content: center;
+  display: grid;
+}
+
+.reservation-form input {
+  margin-bottom: 17px;
+  display: block;
+  width: 100%;
+}
+
+.newsletter-form input {
+  width: 300px;
+  margin: 20px;
+  background-color: transparent;
+  font-family: "Poppins", sans-serif;
+  border-radius: 0px;
+  padding: 5px;
+  text-align: center;
+  color: #e0e1dd;
+  border: 0px;
+}
+
+/* butons */
+
+.button {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  background: none;
+  color: #0f1923;
+  cursor: pointer;
+  position: relative;
+  padding: 5px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-weight: bolder;
+  font-size: 12px;
+
+  -webkit-transition: all 0.15s ease;
+  transition: all 0.15s ease;
+}
+
+.button::before,
+.button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: calc(50% - 5px);
+  border: 1px solid #7d8082;
+  -webkit-transition: all 0.15s ease;
+  transition: all 0.15s ease;
+}
+
+.button::before {
+  top: 0;
+  border-bottom-width: 0;
+}
+
+.button::after {
+  bottom: 0;
+  border-top-width: 0;
+}
+
+.button:active,
+.button:focus {
+  outline: none;
+}
+
+.button:active::before,
+.button:active::after {
+  right: 3px;
+  left: 3px;
+}
+
+.button:active::before {
+  top: 3px;
+}
+
+.button:active::after {
+  bottom: 3px;
+}
+
+.button_lg {
+  position: relative;
+  display: block;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #0f1923;
+  overflow: hidden;
+  -webkit-box-shadow: inset 0px 0px 0px 1px transparent;
+  box-shadow: inset 0px 0px 0px 1px transparent;
+}
+
+.button_lg::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 2px;
+  background-color: #0f1923;
+}
+
+.button_lg::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 4px;
+  height: 4px;
+  background-color: #0f1923;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.button_sl {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: -1px;
+  left: -8px;
+  width: 0;
+  background-color: #ff4655;
+  -webkit-transform: skew(-15deg);
+  -ms-transform: skew(-15deg);
+  transform: skew(-15deg);
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.button_text {
+  position: relative;
+}
+
+.button:hover {
+  color: #0f1923;
+}
+
+.button:hover .button_sl {
+  width: calc(100% + 15px);
+}
+
+.button:hover .button_lg::after {
+  background-color: #fff;
+}
+
+.film-div button {
+  display: flex;
+  justify-content: center;
+}
+.partner-brand {
+  display: flex;
+  justify-content: center;
+}
+.partner-brand img {
+  width: 170px;
+  padding: 10px;
+}
+
+/* responsive */
+
+@media only screen and (max-width: 991.98px) {
+  .movie-page img {
+    margin-bottom: 55px;
+  }
+  /* section {
+		padding: 30px 0px 30px 0px;
+	} */
+
+  .page-title {
+    letter-spacing: 10px;
+    padding: 60px;
+    font-size: 60px;
+  }
+
+  .nav-link::before,
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: #ff4655;
+    transition: width ease-in-out 0.3s;
+  }
+
+  .navbar-brand {
+    display: none;
+  }
+
+  .navbar .nav-item {
+    margin: 5px;
+  }
+
+  /* .brands img {
+		width: 130px;
+	} */
+}
+
+@media only screen and (max-width: 767px) {
+  /* styles for mobile devices */
+
+  .events .movies .card {
+    margin-bottom: 40px;
+    padding: 0px;
+    width: 450px;
+    justify-content: center;
+  }
+
+  .karosel {
+    display: none;
+  }
+
+  .page-title {
+    letter-spacing: 7px;
+    padding-top: 100px !important;
+    padding: 50px;
+    font-size: 45px;
+  }
+
+  /* .brands img {
+		width: 100px;
+	} */
+
+  .button {
+    padding: 1px;
+    font-size: 9px;
+  }
+  section {
+    padding: 20px;
+  }
+
+  /* .section-title {
+		font-family: "Phudu", cursive;
+		color: #e0e1dd;
+		font-size: 23px;
+		padding-bottom: 5px;
+	} */
+
+  /* .card-title {
+		font-size: 20px;
+	} */
+
+  /* .genres .movie-genre {
+		font-size: 9px;
+	} */
+
+  /* .movie-desc p,
+	.card-text {
+		font-size: 11px;
+		padding: 5px;
+		margin: 0px;
+	} */
+
+  .card .film-div {
+    height: 400px;
+  }
+  .card .film-div img {
+    display: none;
+  }
+
+  .divButton {
+    /* padding: 15px; */
+    margin: 15px;
+  }
+
+  .button_text {
+    font-size: 12px;
+  }
+
+  .button_lg {
+    padding: 10px 20px;
+  }
+
+  .subscribe .description,
+  .cinema-description {
+    font-size: 16px;
+  }
+
+  .newsletter-form input {
+    margin: 5px;
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 526px) {
+  /* .page-title {
+		letter-spacing: 5px;
+		padding: 25px;
+		font-size: 30px;
+	} */
+
+  /* .brands img {
+		width: 70px;
+	} */
+
+  /* .navbar .nav-item a {
+		font-size: 12px;
+	} */
+
+  .navbar img {
+    width: 25px;
+  }
+  .container {
+    /* padding: 20px; */
+    width: 100%;
+    display: block;
+    justify-content: center;
+    margin: 0px;
+  }
+
+  /* .card-title {
+		font-size: 12px;
+	} */
+
+  /* .genres .movie-genre {
+		font-size: 7px;
+	} */
+
+  /* .movie-desc p,
+	.card-text {
+		font-size: 8px;
+	} */
+
+  /* .button_lg {
+		padding: 2.5px 5px;
+	} */
+
+  /* .button_text {
+		font-size: 6px;
+	} */
+
+  /* .subscribe .description,
+	.cinema-description {
+		font-size: 12px;
+	} */
+
+  /* .newsletter-form input {
+		margin: 4px;
+		font-size: 12px;
+	} */
+}
+
+@media only screen and (max-width: 375px) {
+  /* .page-title {
+		letter-spacing: 3px;
+		padding: 20px;
+		font-size: 25px;
+	} */
+
+  .events .movies .card {
+    margin-bottom: 50px;
+    padding: 0px;
+    width: 330px;
+  }
+
+  .navbar {
+    padding: 0px;
+    margin: 0px;
+  }
+
+  /* .navbar .nav-item a {
+		font-size: 10px;
+	} */
+  .container {
+    /* padding: 20px; */
+    width: 100%;
+    display: block;
+    justify-content: center;
+    margin: 0px;
+  }
+
+  /* .card-title {
+		font-size: 10px;
+	} */
+
+  /* .movie-desc p,
+	.card-text {
+		font-size: 6px;
+	} */
+
+  /* .button_lg {
+		padding: 2px 5px;
+	} */
+
+  /* .button_text {
+		font-size: 6px;
+	} */
+
+  .genres .movie-genre {
+    padding: 1.5px 3px;
+  }
+
+  /* .section-title {
+		font-size: 20px;
+	} */
+
+  /* .subscribe .description,
+	.cinema-description {
+		font-size: 10px;
+	} */
+
+  /* .newsletter-form input {
+		font-size: 10px;
+	} */
+}

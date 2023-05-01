@@ -1,0 +1,176 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Omen | Početna{% endblock title %}
+
+{% block content %}
+    <section class="featured-movies">
+        <div class="container">
+            <h2 class="section-title">Popularni filmovi</h2>
+            <div class="row">
+                    <!-- movie card-->
+                    {% for movie in popular_movies %}
+                        <div class="col-xl-6 col-md-12">
+                            <div class="card">
+                                <div class="row film-div">
+                                    <img class="card-img-top" src="{{movie.poster_image.url}}" alt="placeholder">
+                                    <div class="card-body">
+                                        <div class="card-content">
+                                        <h5 class="card-title"><a href={% url 'movie_page' movie.slug %}>{{movie.title}}</a></h5>
+                                            <div class="genres">
+                                                {% for genre in movie.genres.all %}
+                                                <a href="{% url 'genre_page' genre.slug %}">
+                                                    <div class="card-text movie-genre">{{genre.name}}</div>
+                                                </a>
+                                                {% endfor %}
+                                            </div>
+                                            <div class="my-1">
+                                                <strong class="card-text">Režija:</strong>
+                                                {% for director in movie.directors.all %}
+                                                <p class="card-text d-inline">
+                                                    {{director}}{% if not forloop.last %},{% endif %}
+                                                </p>
+                                                {% endfor %}
+                                            </div>
+
+                                            <div class="my-1">
+                                                <strong class="card-text">Glavne uloge:</strong>
+                                                {% for actor in movie.actors.all %}
+                                                <p class="card-text d-inline">
+                                                    {{actor}}{% if not forloop.last %},{% endif %}
+                                                </p>
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                        <div class="divButton">
+                                            <a href="{% url 'reservation_page' %}">
+                                                <button class="button">
+                                                        <span class="button_lg" >
+                                                            <span class="button_sl"></span>
+                                                            <span class="button_text">Rezerviši</span>
+                                                        </span>
+                                                </button>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                    <!-- movie card END-->
+                </div>
+        </div>
+    </section>
+    <hr>
+
+    <section class="new-movies">
+        <div class="container">
+            <h2 class="section-title">Najnoviji filmovi</h2>
+                <div class="row">
+                    <!-- movie card-->
+                    {% for movie in new_movies %}
+                    <div class="col-xl-6 col-md-12">
+                        <div class="card">
+                            <div class="row film-div">
+                                <img class="card-img-top" src="{{movie.poster_image.url}}" alt="placeholder">
+                                <div class="card-body">
+                                    <div class="card-content">
+                                    <h5 class="card-title"><a href={% url 'movie_page' movie.slug %}>{{movie.title}}</a></h5>
+                                        <div class="genres">
+                                            {% for genre in movie.genres.all %}
+                                            <a href="{% url 'genre_page' genre.slug %}">
+                                                <div class="card-text movie-genre">{{genre.name}}</div>
+                                            </a>
+                                            {% endfor %}
+                                        </div>
+
+                                        <div class="my-1">
+                                            <strong class="card-text">Režija:</strong>
+                                            {% for director in movie.directors.all %}
+                                            <p class="card-text d-inline">
+                                                {{director}}{% if not forloop.last %},{% endif %}
+                                            </p>
+                                            {% endfor %}
+                                        </div>
+
+                                        <div class="my-1">
+                                            <strong class="card-text">Glavne uloge:</strong>
+                                            {% for actor in movie.actors.all %}
+                                            <p class="card-text d-inline">
+                                                {{actor}}{% if not forloop.last %},{% endif %}
+                                            </p>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                    <div class="divButton">
+                                        <a href="{% url 'reservation_page' %}">
+                                            <button class="button">
+                                                    <span class="button_lg" >
+                                                        <span class="button_sl"></span>
+                                                        <span class="button_text">Rezerviši</span>
+                                                    </span>
+                                            </button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <!-- movie card END-->
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
+
+    <section class="subscribe">
+        <div class="container newsletter-text">
+            <div class="row">
+                <h2 class="section-title">Prijava za newsletter</h2>
+                <div class="row">
+                    <div class="col-xl-12 description">
+                        <p>Dobrodo&scaron;li u Omen Cinema, bioskop koji će vas ostaviti bez daha! Prijavite se na na&scaron; newsletter da biste bili u toku sa svim novostima i događajima koje imamo u ponudi.</p>
+                        <p>Budite među prvima koji će saznati sve informacije o novim filmovima, posebnim projekcijama, premijerama i nagradnim igrama. Prijavom na na&scaron; newsletter, dobićete pristup ekskluzivnim ponudama za na&scaron;u vernu publiku, kao &scaron;to su popusti na karte, besplatni kokice ili piće uz kupljenu ulaznicu i drugi iznenađujuće poklone.</p>
+                        <p>Ne propustite priliku da uživate u najnovijim holivudskim hitovima ili u posebnim projekcijama klasika filma, dok vas na&scaron;a udobna sedi&scaron;ta i najnovija tehnologija zvuka i slike uvode u svet filmske umetnosti.</p>
+                        <p>Prijavite se na na&scaron; newsletter i neka vam buduća iskustva u bioskopu budu jo&scaron; uzbudljivija!</p>
+                    </div>
+                </div>
+            </div>   
+            <div class="row">
+                <div class="newsletter-form">
+                    {% comment %} {% if request.session.subscribed == None %} {% endcomment %}
+                    <form method="POST">
+                        {% csrf_token %}
+                        {{subscribe_form}}
+                        <button class="button" type="submit">
+                            <span class="button_lg">
+                                <span class="button_sl"></span>
+                                <span class="button_text">Prijavi se</span>
+                            </span>
+                        </button>
+                    </form>
+                    {% comment %} {% endif %} {% endcomment %}
+                    {% if subscribe_message != '' %}
+                        <p class="sub-msg">{{subscribe_message}}</p>
+                    {% endif %}   
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="sponsors">
+        <div class="container">
+            <div class="row">
+                <h2 class="section-title">Partneri</h2>
+                <div class="row brands">
+                    {% for partner in partners %}
+                    <div class="partner-brand col-xl-3 col-md-4 col-sm-6">
+                        <img src="{{partner.brand_image.url}}" alt="img">
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

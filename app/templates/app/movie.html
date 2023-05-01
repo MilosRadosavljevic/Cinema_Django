@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block title %}Omen | {{movie.title}}{% endblock title %}
+
+{% block page_title %}{{movie.title}}{% endblock page_title %}
+{% block content %}
+    <section class="movie-page">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-4 col-sm-12 ">
+                    <img src="{{movie.poster_image.url}}" alt="">
+                </div>
+
+                <div class="col-xl-8 col-sm-12 cinema-description">
+                    <div class="desc-inline">
+                        <strong>Žanrovi:</strong>
+                        {% for genre in movie.genres.all %}
+                        <p>
+                            <a href="{% url 'genre_page' genre.slug%}">{{genre}}{% if not forloop.last %},{% endif %}</a>
+                        </p>
+                        {% endfor %}  
+                    </div>
+                    <hr>
+                    <p><strong>Dužina trajanja: </strong>{{movie.duration_minutes}} min</p>
+                    <hr>
+                    <div>
+                        <strong>Režija: </strong>
+                        {% for director in movie.directors.all %}
+                        <p class="d-inline">
+                            {{director}}{% if not forloop.last %}, {% endif %}
+                        </p>
+                        {% endfor %}
+                    </div>
+                    <hr>
+
+                    <div>
+                        <strong>Scenario:</strong>
+                        {% for writter in movie.writters.all %}
+                        <p class="d-inline">
+                            {{writter}}{% if not forloop.last %},{% endif %}
+                        </p>
+                        {% endfor %}
+                    </div>
+                    <hr>
+
+                    <div>
+                        <strong>Glavne uloge: </strong>
+                        {% for actor in movie.actors.all %}
+                            {{actor}}{% if not forloop.last %}, {% endif %}
+                        {% endfor %}
+                    <hr>
+                    <div class="cinema-description">
+                        <h3>Deskripcija: </h3>
+                        <div class="movie-desc">
+                            {{movie.desc|safe}}
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}
